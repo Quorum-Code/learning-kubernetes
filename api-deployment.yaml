@@ -24,12 +24,6 @@ spec:
           - name: synergychat-api-volume
             mountPath: /persist
           name: synergychat-api
-          env:
-            - name: API_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: synergychat-api-configmap
-                  key: API_PORT
           envFrom:
             - configMapRef:
-                name: synergychat-crawler-configmap
+                name: synergychat-api-configmap
